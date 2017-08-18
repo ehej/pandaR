@@ -18,7 +18,7 @@ Kernel::Import("classes.data.SettingsTable");
 Kernel::Import("classes.data.FoodTypesTable");
 Kernel::Import("classes.data.PlaceTypesTable");
 
-class IndexPage extends PublicPage {
+class IndexPage extends PublicPage { 
 
 	/**
 	 * @var SpecialOffersTable
