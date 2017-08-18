@@ -1,0 +1,2 @@
+<h1 style="padding-bottom: 20px; font:normal 20px 'Garamond', Garamond ,sans-serif;">Добро пожаловать в панель управления сайтом "PandaTravel"</h1>
+Для возможности редактирования пункта меню, кликните по его названию из списка слева.

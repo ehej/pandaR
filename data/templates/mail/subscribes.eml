@@ -1,0 +1,7 @@
+Подписка.<br>
+Вы успешно подписались на рассылку сайта NewsTravel.com.ua.<br>
+Для подтверждения подписки перейдите по <a href="{$data.varLink}">ссылке</a> ({$data.varLink}).<br>
+<br>
+--<br>
+С уважением,<br>
+NewsTravel.com.ua<br>

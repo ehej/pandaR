@@ -1,0 +1,35 @@
+<br /><br />
+<table width="500" border="0" cellspacing="0" cellpadding="0"> 
+	<tr> 
+        <td><span>Ф.И.О.</span></td> 
+        <td>{$data.varFIO}</td> 
+    </tr> 
+	<tr> 
+		<td><span>Телефон</span></td> 
+		<td>{$data.varTel}</td>
+	</tr> 
+	<tr> 
+        <td><span>E-mail</span></td> 
+        <td>{$data.varMail}</td>
+	</tr> 
+	<tr> 
+        <td><span>Комментарий</span></td>
+        <td>{$data.varComments|nl2br}</td>
+    </tr> 
+    <tr> 
+		<td><span>Тур</span></td>
+		<td><a href="{$PROJECT_URL}tours.php?intTourID={$data.intTourID}">{$data.varName}</a></td>
+	</tr> 
+	{if $data.varDateFrom || $data.varDateTo}
+	<tr> 
+        <td><span>Дата</span></td>
+        <td>С {$data.varDateFrom} {if $data.varDateTo}по {$data.varDateTo}{/if}</td>
+  	</tr>
+	{/if}
+	{if $data.intDays}
+	<tr> 
+        <td><span>Дней</span></td>
+        <td>{$data.intDays}</td>
+  	</tr>
+	{/if}
+</table>

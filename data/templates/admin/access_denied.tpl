@@ -1,0 +1,1 @@
+<div style="text-align: center; padding-top: 100px;">У Вас нет прав для просмотра данной страницы</div>

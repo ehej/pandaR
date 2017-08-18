@@ -1,0 +1,35 @@
+﻿/*
+Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.html or http://ckeditor.com/license
+*/
+
+CKEDITOR.editorConfig = function( config )
+{
+	base_url = "/manager/";
+	// Define changes to default configuration here. For example:
+	config.language = 'ru';
+	//config.uiColor = '#000000';
+	config.baseHref = base_url;
+	config.filebrowserBrowseUrl = base_url + 'js/ckfinder/ckfinder.html';
+	config.filebrowserFlashBrowseUrl = base_url + 'js/ckfinder/ckfinder.html';
+	config.filebrowserImageBrowseLinkUrl = base_url + 'js/ckfinder/ckfinder.html';
+	config.filebrowserImageBrowseUrl = base_url + 'js/ckfinder/ckfinder.html';
+	config.skin = 'office2003';
+	
+	config.extraPlugins = 'more'; 
+	
+	config.toolbar = 'Special';
+	
+	config.toolbar_Custom =
+[
+    ['Source', 'Maximize','-','Undo','Redo','PasteFromWord','Find','Replace','RemoveFormat','-','Format','Font','FontSize','-','more'],
+    '/',
+    ['Bold','Italic','Underline','Strike','-','Subscript','Superscript','-','NumberedList','BulletedList','-','Outdent','Indent','Blockquote','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','Link','Unlink','Anchor','-','Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','-','TextColor','BGColor']
+];
+	config.toolbar_Special =
+[
+   ['Source', 'Maximize','-','Undo','Redo','RemoveFormat','-','FontSize','-','more'],
+   '/',
+   ['Bold','Italic','Underline','-','NumberedList','BulletedList','-','JustifyLeft','JustifyCenter','JustifyRight','-','Link','Unlink','Anchor','-','Image','PasteFromWord','-','SpecialChar','-','TextColor','BGColor']
+];
+};

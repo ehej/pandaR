@@ -1,0 +1,92 @@
+	.menu ul{
+	display: block;
+	position: relative;
+	height: 38px;	
+	}
+	.menu ul li{
+	height: 38px;
+	float:left;
+	display:inline;
+	zoom:1
+	}
+	.menu a {
+	display: block;
+	height: 38px;
+	}
+	.menu a span {
+		width: auto;
+		height: 38px;
+		display: block;
+		line-height:38px;
+		padding: 0 1.35%; 
+		}
+	.menu a span img{
+	margin: 10px 0 0 4px;
+	}
+	.menu ul li:first-child a span{
+	padding-left: 12px;
+	}
+	.menu ul li ul{
+	height:auto;
+	}
+	.menu ul li ul li{
+	float:none;
+	list-style: none
+	}
+	.menu ul li ul li:first-child{
+	z-index: expression(runtimeStyle.zIndex = 1, this.innerHTML = "<div class='sub-arrow'></div>" + this.innerHTML) 
+	}
+	
+	.boxes-links a{
+	display:block;
+	}
+	
+	*:first-child+html .boxes-links a span {  /* хак для ие7 */
+ display: block;
+ z-index: expression(
+ runtimeStyle.zIndex = 1,
+ this == ((98/2)-parseInt(offsetHeight)/2) <0 ? style.marginTop="0" : style.marginTop=(98/2)-(parseInt(offsetHeight)/2) +'px');
+}
+
+
+	.country-list li  li{
+	display:inline;
+	zoom:1;
+	padding-bottom:1px;
+	margin-bottom:2px;
+	}
+	.slider-menu li, .slider-menu a{
+	zoom:1
+	}
+	.slider-menu li.current{
+	margin: 0 0 -3px;
+	}
+	.heading-orange, .heading-blue{
+	display:inline;
+	zoom:1
+	}
+	
+	.footer-menu a{
+	line-height:12px;
+	}
+	
+	.news dt{
+	display:inline;
+	zoom:1
+	}
+	.country-menu{
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+

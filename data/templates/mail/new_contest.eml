@@ -1,0 +1,34 @@
+Subject: {$data.contestName}
+<br /><br />
+<table width="500" border="0" cellspacing="0" cellpadding="0"> 
+	<tr> 
+        <td><span>Ф.И.О.</span></td> 
+        <td>{$data.varFIOContest}</td> 
+    </tr> 
+	<tr> 
+		<td><span>Телефон</span></td> 
+		<td>{$data.varPhoneContest}</td> 
+	</tr> 
+	<tr> 
+        <td><span>Почтовый адрес</span></td> 
+        <td>{$data.varPostArrdContest}</td> 
+	</tr> 
+	<tr> 
+        <td><span>E-mail</span></td> 
+        <td>{$data.varEmailContest}</td> 
+	</tr> 
+	<tr> 
+        <td><span>Название агентства</span></td> 
+        <td>{$data.varCompanyNameContest}</td> 
+    </tr> 
+    <tr> 
+		<td><span>Город</span></td> 
+		<td>{$data.varCityContest}</td> 
+	</tr> 
+	<tr> 
+        <td><span>Дополнительная информация</span></td> 
+        <td>{$data.varInfoContest}</td> 
+  	</tr>
+</table>
+<br /><br />
+<b>Mibs tour</b>
