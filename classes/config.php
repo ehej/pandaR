@@ -5,9 +5,9 @@ define('ENABLE_INTERNAL_DEBUG'		, 	false);
 ini_set('display_errors',1);
 
 // local path & url
-define("PROJECT_PATH"				, 	"F:/OpenServer/domains/panda.fm/"/*"/var/www/pandaH/panda.fm/"*/);
+define("PROJECT_PATH"				, 	"F:/OpenServer/domains/pandaR/"/*"/var/www/pandaH/panda.fm/"*/);
 
-define("PROJECT_URL"				, 	"panda.fm/");
+define("PROJECT_URL"				, 	"");
 
 // templates path
 define('TEMPLATES_PATH'				, 	PROJECT_PATH.'data/templates/');

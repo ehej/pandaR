@@ -14,38 +14,35 @@ class Kernel {
 	}
 
 	public static function RenderBackTrace($backtrace) {
-		?>
-		 	<div style="padding: 5px 5px 5px 5px; background: #FFAAAA">
-		 	<table border="0" cellpadding="0" cellspacing="0">
-		<?
+		
+            echo '<div style="padding: 5px 5px 5px 5px; background: #FFAAAA">
+                <table border="0" cellpadding="0" cellspacing="0">';
+		
 	     $files = $backtrace;
 	     foreach ($files as $row => $file) {
 	     	echo '<tr>';
 	     	echo '<td>' . $file['file'] . ' : ' . $file['line'] . '</td>';
 	     	echo '<td width="50">&nbsp;</td>';
 	     	if ($file['function']) {
-	     		echo '<td>' . ( (!empty($file['class'])) ? $file['class'] . '::' : '' ) . $file['function'] . '</td>';
+                    echo '<td>' . ( (!empty($file['class'])) ? $file['class'] . '::' : '' ) . $file['function'] . '</td>';
 	     	} else {
-	     		echo '<td></td>';
+                    echo '<td></td>';
 	     	}
 	     	echo '</tr>';
-	     }
-		?>
-			</table>
-			</div>
-		<?
+            }
+            echo '</table>
+                   </div>';
 	}
 
 	public static function RaiseError($message='', $interrupt = false) {
 		if (ENABLE_INTERNAL_DEBUG) {
-		?>
-		<div>
-		<div align="left" style="padding: 5px 5px 5px 5px; background: #FF8888">
-			<b><?php echo $message;?></b>
-		</div>
-		<?Kernel::RenderBackTrace(debug_backtrace());?>
-		</div>
-		<?
+                    echo '<div>
+                	<div align="left" style="padding: 5px 5px 5px 5px; background: #FF8888">';
+                    echo '<b>' . $message . '</b>';
+                    echo '</div>';
+                    Kernel::RenderBackTrace(debug_backtrace());
+                    echo '</div>';
+		
 		if ( $interrupt == true ) die();
 		}
 	}
