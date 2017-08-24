@@ -5,9 +5,10 @@ define('ENABLE_INTERNAL_DEBUG'		, 	false);
 ini_set('display_errors',1);
 
 // local path & url
-define("PROJECT_PATH"				, 	realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . DIRECTORY_SEPARATOR/*"/var/www/pandaH/panda.fm/"*/);
+define("PROJECT_PATH"				, 	"/var/www/pandaH/panda.fm/");
 
-define("PROJECT_URL"				, 	"http://" . basename(PROJECT_PATH)  . "/");
+define("PROJECT_URL"				, 	"http://panda.fm/");
+
 // templates path
 define('TEMPLATES_PATH'				, 	PROJECT_PATH.'data/templates/');
 
@@ -44,11 +45,11 @@ define('SITE_FROM_NAME'				, 	'PandaTravel');
 define("FRAMEWORK_PATH"				, 	PROJECT_PATH."framework/");
 
 // database connections
-define('DB_URI'						, 	'mysql://root:@localhost/pandaR');
+define('DB_URI'						, 	'mysql://u_pandaR:cV7l1Ny1@localhost/pandaR');
 /*define('DB_MSSQL_URI'				, 	'mssql://spominprice:!@CgjVby@online.newstravel.com.ua/wwwbron');
 define('DB_ODBC_URI'				, 	'odbc://spominprice:!@CgjVby@online.newstravel.com.ua/SQLOnLine');*/
 
-//'mysql://'.$this->getUser().':'.$this->getPassword().'@'.$this->getHost().'/'.$this->getDatabase();
+
 
 
 define('LOG_USERS_ACTION', true);
