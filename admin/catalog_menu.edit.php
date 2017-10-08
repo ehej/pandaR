@@ -98,7 +98,10 @@ class IndexPage extends AdminPage {
 		$data['varModule'] = $this->request->getString('varModule');
 		$data['varUrl'] = $this->request->getString('varUrl');
 		$data['isAllwaysOpen'] = $this->request->getNumber('isAllwaysOpen');
-		$parent = $this->menuCountriesTable->GetByFields(array('intCountryID' => $data['intParentID']));
+		$parent = $this->menuCountriesTable->GetByFields(array(
+                    'intCountryID' => $data['intParentID'],
+                    'intParentID' => 0
+                ));
 		
 		$data['intParentID'] =  $parent['intMenuID'];
 		$data['intCountryID'] =  $parent['intCountryID'];
@@ -141,7 +144,6 @@ class IndexPage extends AdminPage {
 					}
 				} break;
 			}
-			
 			if (isset($data['intMenuID']) && !empty($data['intMenuID'])) {
 				$this->menuCountriesTable->Update($data);
 			} else {
