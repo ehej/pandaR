@@ -109,10 +109,10 @@ $(document).ready(function(){
         $.featureList(
             $(".slider-menu li a"),
             $(".slider-content .slide a"), {
-                start_item	:	1
+                start_item	:	0
             }
         );
-
+        
         $('.header li').hover (
             function(){
                 $(this).addClass('hovered').addClass($(this).children('div').length ? 'hasSub':'');

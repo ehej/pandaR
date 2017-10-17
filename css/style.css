@@ -323,22 +323,25 @@ font-size:13px;
 			}
 	
 /* ------- slider ------- */
-		.slider{
-		height:252px;
-		/*background: #aee3ff;*/
-		overflow:hidden;
-		position:relative;
-		margin: 0 0 27px;
+		.slider {
+                    height:300px;
+                    /*background: #aee3ff;*/
+                    overflow:hidden;
+                    position:relative;
+                    margin: 0 0 27px;
+                    border-radius: 15px;
+                    box-shadow: 5px 5px 9px #999;
 		}
 		.slider-content{
 		float:left;
-		/*width:577px; */
+		width:577px;
 		height:252px;
 		overflow:hidden;
 		border-right:1px solid #fff;
 		}
 			.slide{
-			position:absolute
+                            position:absolute;
+                            width: 100%;
 			}
 			.slide-description{
 			position:absolute;
@@ -377,9 +380,10 @@ font-size:13px;
 			}
 		
 		.slider-menu{
-		float:right;
-		width:183px;
-		margin: 0 0 -2px 0;
+                    display: none;
+                    float:right;
+                    width:183px;
+                    margin: 0 0 -2px 0;
 		}
 		.slider-menu li{
 			position:relative;
@@ -426,7 +430,9 @@ font-size:13px;
 		top: 50%;
 		margin: -9px 0 0 0;
 		}
-		
+                .slider .slider-content .slide img {
+                    width: 100%;
+                }
 		
 		/* ------- search ------- */
 		.search-box-tr{
@@ -551,7 +557,7 @@ font-size:13px;
 		}
 
 		.side-box{
-		margin: 0 0 5px;<!--there were 25px at used searchbox-->
+		margin: 0 0 5px; //there were 25px at used searchbox
 		}
 		.boxes-links li{
 		list-style: none;
