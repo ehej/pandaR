@@ -324,13 +324,13 @@ font-size:13px;
 	
 /* ------- slider ------- */
 		.slider {
-                    height:300px;
+                    height:252px;
                     /*background: #aee3ff;*/
                     overflow:hidden;
                     position:relative;
                     margin: 0 0 27px;
                     border-radius: 15px;
-                    box-shadow: 5px 5px 9px #999;
+                    box-shadow: 2px 2px 9px #999;
 		}
 		.slider-content{
 		float:left;
@@ -378,20 +378,50 @@ font-size:13px;
 			right: 0;
 			background: url(../images/slider-corner-r.png) no-repeat;
 			}
+                        .slide-name {
+                            position: absolute;
+                            top: 200px;
+                            width: 100%;
+                            text-align: center; 
+                            color: #fff; 
+                            font-size: 16px;
+                            text-shadow: 1px 1px 1px #222, -1px -1px 1px #222;
+                            
+                        }
+                        .slide-name .desc-title {
+                            display: inline;
+                            padding: 3px 15px;
+                            background: linear-gradient(to left, 
+                                rgba(255, 255, 255, 0), 
+                                rgba(231, 248, 255, 0.5), 
+                                rgba(255, 255, 255, 0)
+                            );
+                        }
 		
-		.slider-menu{
-                    display: none;
-                    float:right;
-                    width:183px;
-                    margin: 0 0 -2px 0;
+		.slider-menu{ 
+                    position: absolute;
+                    left: 50%;
+                    bottom: 10px;
+                    width: 60%;
+                    margin-left: -30%;
+                    text-align: center;
 		}
-		.slider-menu li{
+		.slider-menu li {
 			position:relative;
 			list-style: none;
-			font-size:15px;
-			line-height:23px;
-			background: #aee3ff url(../images/slider-menu-bg.png) repeat-x 0 0;
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        margin: 1px 5px;
+                        text-indent: -999px;
+                        cursor: pointer;
+                        background-color: #aee3ff;
+                        border-radius: 10px;
+			/*background: #aee3ff url(../images/slider-menu-bg.png) repeat-x 0 0;*/
 		}
+                .slider-menu li:hover {
+                    box-shadow: 0px 0px 1px 1px #fff
+                }
 		.slider-menu li:last-child a{ 
 		background: none
 		}
@@ -401,19 +431,20 @@ font-size:13px;
 		color: #004269;
 		text-decoration:none;
 		text-shadow: 1px 1px 0px #fff;
-		background: url(../images/slider-menu-bg-line.png) no-repeat left bottom;
+		/*background: url(../images/slider-menu-bg-line.png) no-repeat left bottom;*/
 		}
 		.slider-menu li.current{
-		background: #f2f9ff url(../images/slider-menu-bg-act.png) repeat-x;
+                    background-color:#f25b00;
+                    box-shadow: 0px 0px 1px 1px #fff
+                    /*background: #f2f9ff url(../images/slider-menu-bg-act.png) repeat-x;*/
 		}
 		.slider-menu li.current a{
-		background: url(../images/slider-menu-bg-line-act.png) no-repeat left bottom
+                    /*background: url(../images/slider-menu-bg-line-act.png) no-repeat left bottom*/
 		}
 		.slider-menu li div.menu_arrow{
 			position:absolute; 
-			left:-10px;
 			top: 0px;
-			background: url('/img/arrowleft_white.png') no-repeat left center;
+			/*background: url('/img/arrowleft_white.png') no-repeat left center;*/
 			width: 10px;
 			height: 100%;
 			display: none;
@@ -433,7 +464,7 @@ font-size:13px;
                 .slider .slider-content .slide img {
                     width: 100%;
                 }
-		
+/*-- end slider --*/		
 		/* ------- search ------- */
 		.search-box-tr{
 		background: url(../images/search-top.png) no-repeat 0 0;
@@ -792,21 +823,39 @@ label[for="remember"] {
 		}
 		.heading-orange, .heading-blue{
 		display:inline-block;
-		background: url(../images/heading-orange-l.png) no-repeat 0 0;
+		//background: url(../images/heading-orange-l.png) no-repeat 0 0;
 		height:42px;
 		padding: 0 0 0 21px;
 		margin: 0 0 5px;
 		}
-		.tours .heading-orange, .tours .heading-blue{
-		margin: 0 0 0 -21px;
+		.tours .heading-orange, .tours .heading-blue {
+                    position: relative;
+                    margin: 0 0 0 -21px;
 		}
 		.heading-orange .title, .heading-blue .title{
 		font-size:18px;
 		display:inline-block;
 		height:28px;
 		padding: 0 5px 0 0;
-		background: url(../images/heading-orange-r.png) no-repeat 100% 0;
+		//background: url(../images/heading-orange-r.png) no-repeat 100% 0;
 		}
+                .heading-orange .title {
+                    position: relative;
+                    background: url(../images/heading-orange-bg.png);
+                    border-radius: 7px;
+                    margin-left: -20px;
+                    padding-left: 20px;
+                }
+                .tri {
+                    position: absolute;
+                    float: right;
+                    width: 0;
+                    height: 0;
+                    border-top: 17px solid #f25b00;
+                    border-left: 19px solid transparent;
+                    top: 24px;
+                    left: 2px;
+                }
 		.heading-orange .title span, .heading-blue .title span{ 
 		display:inline-block;
 		min-width: 61px;
@@ -814,7 +863,7 @@ label[for="remember"] {
 		line-height:28px;
 		padding: 0 32px 0 16px;
 		color: #fff;
-		background: url(../images/heading-orange-bg.png) repeat-x
+		//background: url(../images/heading-orange-bg.png) repeat-x
 		}
 		.heading-blue{
 		background: url(../images/heading-blue-l.png) no-repeat 0 0;

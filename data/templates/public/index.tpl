@@ -1,7 +1,7 @@
 <div class="tours">
 {foreach from=$ctours item=items key=key}
 	<div class="heading-orange">
-		<h2 class="title"><span>{$key}</span></h2>
+		<div class="tri"></div><h2 class="title"><span>{$key}</span></h2>
 	</div>
 	<table class="tours-table" width="100%">
 		<tr class="table-heading">
