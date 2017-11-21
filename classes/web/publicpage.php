@@ -1079,7 +1079,15 @@ class PublicPage extends Page {
 		
 		// новости
 		$settings = $this->settingsTable->Get(array('intSettingsID' => 1));
-		$news = $this->newsTable->GetList(array('FROMvarDate' => date('Y-m-d H:i:s'), 'intActive' => 1, 'intOnlyAuthorized' => 0), array('varDate' => 'ASC'), null, null, null, true, null, 5);
+		$news = $this->newsTable->GetList(array(
+                        'TOvarDate' => date('Y-m-d H:i:s'), 
+                        'intActive' => 1, 
+                        'intOnlyAuthorized' => 0
+                    ), array(
+                        'varDate' => 'DESC'
+                    ), 
+                    null, null, null, true, null, 5
+                );
 		unset($news['pager']);
 		$tmp = array();
 		foreach ($news as $key => $value) {

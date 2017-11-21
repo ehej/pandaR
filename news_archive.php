@@ -41,7 +41,7 @@ class IndexPage extends PublicPage {
 	}
 
 	function setFilters() {
-		$this->sfilter['FROMvarDate'] = date('Y-m-d H:i:s');
+		$this->sfilter['TOvarDate'] = date('Y-m-d H:i:s');
 		$this->sfilter['intActive'] = 1;
 		if ($this->request->getString('sbutton')) $this->page = 1;
 		else $this->page = $this->request->getNumber('page', null, 1);
@@ -69,12 +69,12 @@ class IndexPage extends PublicPage {
 		$this->document->addValue('dataType', $newsType);
 		
 		$tmp = array();
-		$news = $this->newsTable->GetList($this->sfilter, array('varDate'=>'ASC'), null, null, 'getSQLRows', true, $this->page, DEFAULT_ITEMSPERPAGE);
+		$news = $this->newsTable->GetList($this->sfilter, array('varDate'=>'DESC'), null, null, 'getSQLRows', true, $this->page, DEFAULT_ITEMSPERPAGE);
 		
 		foreach ($news as $key => $value) {
 			if($key === 'pager'){
 				$pager = $value;
-			}else{
+			} else {
 				$value['varIdentifier'] = $value['intNewsID'];
 				$value['varModule'] = 'news';
 				$value['link'] = LinkCreator::create($value, $this->all_alias);
