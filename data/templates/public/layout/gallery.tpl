@@ -1,32 +1,47 @@
 {if $gallsImages}
-	<div class="gallery-holder">
-		<div class="gallery" style="position: relative;">
-			<ul id="gallery" class="jcarousel-skin-tango">
-				{foreach from=$gallsImages item=items key=key}
-						{foreach from=$items item=item}
-							<li class="rolls">
-								<a href="{$item.imageOrigUrl}" rel="lytebox[photo]" style="text-decoration:none;">
-									<img  width="150" src="{$item.imageOrigUrl}" title="{$item.varTitle}" alt="{$item.varTitle}" border="0"/>
-								</a>
-							</li>
-						{/foreach}
-				{/foreach}
-			</ul>
-		</div>
-    <br>
-	{literal}
-    <script type="text/javascript">
-        $( function() {
-            $('#mycarousel').jcarousel({ 
-                scroll:1,
-				vertical: true
-            });
-            $('#gallery').jcarousel({
-                scroll:2,
-				vertical:false
-            });
-        });
-    </script>
-	{/literal}
-	</div>
+    <div class="jcarousel-wrapper">
+        <div data-jcarousel="true" data-wrap="circular" class="jcarousel" style="position: relative;">
+            <ul style="left: 0px; top: 0px;">
+                {foreach from=$gallsImages item=items key=key}
+                    {foreach from=$items item=item}
+                        <li>
+                            <a href="{$item.imageOrigUrl}" rel="lytebox[photo]" style="display: none; text-decoration:none;">
+                                <img height="" width="600" src="{$item.imageOrigUrl}" title="{$item.varTitle}" alt="{$item.varTitle}" border="0"/>
+                            </a>
+                        </li>
+                    {/foreach}
+                {/foreach}
+            </ul>
+            <a data-jcarousel-control="true" data-toggle="-1" class="jcarousel-control jcarousel-control-prev">
+                <span class="img-prev"></span>
+            </a>
+            <a data-jcarousel-control="true" data-toggle="+1" class="jcarousel-control jcarousel-control-next">
+                <span class="img-next"></span>
+            </a>
+        </div>
+        <div class="miniatures">
+            {foreach from=$gallsImages item=items key=key}
+                {foreach from=$items item=item}
+                    <img src="{$item.imageOrigUrl}" title="{$item.varTitle}"/>
+                {/foreach}
+            {/foreach}
+            </div>
+        <br/>
+        {literal}
+            <script type="text/javascript">
+                $( function() {
+                    $.featureList(
+                        $(".jcarousel-wrapper > .miniatures > img"),
+                        $(".jcarousel-wrapper li a"), 
+                        {
+                            start_item:	0,
+                            arrow_nav: $(".jcarousel > .jcarousel-control"),
+                            transition_interval: 7000,
+                            transition_speed: 1000
+                        }
+                    );
+                });
+            </script>
+        {/literal}
+    </div>
 {/if}

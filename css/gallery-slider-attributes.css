@@ -1,0 +1,136 @@
+.jcarousel-wrapper {
+    padding: 5px;
+    margin: 20px auto;
+    position: relative;
+    border: 1px solid #a2c9fe;
+    width: 600px;
+    height: 400px;
+
+}
+
+
+.jcarousel-wrapper .photo-credits {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    font-size: 13px;
+    color: #fff;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
+    opacity: .66;
+}
+
+.jcarousel-wrapper .photo-credits a {
+    color: #fff;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.jcarousel ul {
+    width: 100%;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    width: 600px;
+    position: absolute;
+    float: left;
+}
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+    font: 40px/50% Arial, sans-serif;
+    opacity: 0.2;
+}
+
+.jcarousel-control-prev {
+    left: 0;
+    background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+}
+.jcarousel-control-prev > .img-prev:before { 
+    content: "<"; 
+    font-family: monospace;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}
+
+.jcarousel-control-next {
+    right: 0;
+    background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);;
+}
+.jcarousel-control-next > .img-next:before { 
+    content: ">"; 
+    font-family: monospace;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+}
+.jcarousel-control-next > .img-next,
+.jcarousel-control-prev > .img-prev {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.jcarousel-control-next > .img-next {
+    left: 15px;
+}
+.jcarousel-control-prev > .img-prev {
+    right: 15px;
+}
+
+.jcarousel-control.jcarousel-control-prev:hover,
+.jcarousel-control.jcarousel-control-next:hover
+{
+    display: block;
+    opacity: 0.5;
+}
+
+.jcarousel-control {
+    width: 35%;
+}
+
+.jcarousel-wrapper .miniatures .current {
+    border: 1px #a2c9fe solid;
+}
+
+.jcarousel-wrapper .miniatures {
+    text-align: left;
+    margin-top: 10px
+}
+
+.jcarousel-wrapper .miniatures img {
+    //vertical-align: top;
+    width: 40px;
+    height: 40px;
+    float: left;
+    padding: 3px;
+}
+.jcarousel-wrapper .miniatures img:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+
+
+
+

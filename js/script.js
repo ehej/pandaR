@@ -25,35 +25,11 @@ function blured(obj,defaultValue){
 	}
 }
 
-function BlockUnsupportedBrowsers() {
-	var bver = parseFloat($.browser.version);
-	if ( ($.browser.msie && bver == 6)) {
-        $.get('/unsupportedbrowser.html', function(data) {
-            $('body').html(data);
-        });
-	}
-}
-
 function shlogin() {
     $('.autorlogin').toggle();
 }
 
-function alignItems(items, containerWidth){
-    if (!($.browser.msie && (parseInt($.browser.version) < 8))) {
-        var sum = 0;
-        items.css('marginRight','0');
-        for (i = 0; i < (items.length-1); i++) {
-            sum = sum + items[i].offsetWidth+6;
-        }
-        var margin = ((containerWidth - sum) / items.length-1);
-        items.css('margin-right',margin)
-             .filter(':last').css({
-                                    'margin-right': '0',
-                                    'margin-left':'-'+margin+'px',
-                                     float:'right'
-                                  });
-    }
-}
+
 function passwordfieldchange(field) {
     if(field.value=='') {
         field.value='Пароль'; field.type='text';
@@ -109,7 +85,9 @@ $(document).ready(function(){
         $.featureList(
             $(".slider-menu li a"),
             $(".slider-content .slide a"), {
-                start_item	:	0
+                start_item	:	0,
+                arrow_nav       : $(".slider > .arrow-navi"),
+                transition_speed: 1000
             }
         );
         
@@ -122,16 +100,8 @@ $(document).ready(function(){
             }
         )
 
-        alignItems($('.footerCenter p:first a'), 580);
-        alignItems($('.footerCenter p:last a'), 580);
-        alignItems($('.footerCenter h2 a'), 580);
-
         $('.country h2 img').click(function(){
-			if ( $.browser.msie ) {
-				$(this).parent('h2').toggleClass('open','').next('div').toggleClass('open','');
-			} else {
-				$(this).parent('h2').toggleClass('open','').next('div').slideToggle('slow').toggleClass('open','');
-			}
+            $(this).parent('h2').toggleClass('open','').next('div').slideToggle('slow').toggleClass('open','');
         });
 		
 //////////////////////////

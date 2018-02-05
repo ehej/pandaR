@@ -1,4 +1,3 @@
-
 (function(){ 
     var widget_id = '8UjMBfrut0';var d=document;var w=window;
     function l(){

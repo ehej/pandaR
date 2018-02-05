@@ -44,7 +44,7 @@ define('SITE_FROM_NAME'				, 	'PandaTravel');
 define("FRAMEWORK_PATH"				, 	PROJECT_PATH."framework/");
 
 // database connections
-define('DB_URI'						, 	'mysql://root:@localhost/pandaR');
+define('DB_URI'						, 	'mysql://root:@localhost/pandafm_bug');
 /*define('DB_MSSQL_URI'				, 	'mssql://spominprice:!@CgjVby@online.newstravel.com.ua/wwwbron');
 define('DB_ODBC_URI'				, 	'odbc://spominprice:!@CgjVby@online.newstravel.com.ua/SQLOnLine');*/
 

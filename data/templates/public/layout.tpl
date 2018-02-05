@@ -12,8 +12,8 @@
     <link type="text/css" rel="stylesheet" href="/css/jquery.datepick.css" />
     <link type="text/css" rel="stylesheet" href="/css/jcarousel.css" />
     <link type="text/css" rel="stylesheet" href="/css/lytebox.css" />
+    <link type="text/css" rel="stylesheet" href="/css/gallery-slider-attributes.css" />
 	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="css/ie7.css" /><![endif]-->
-
 
     <script type="text/javascript">var languageCode = 'ru';</script>
     <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
@@ -25,8 +25,6 @@
 	<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
 	<script type="text/javascript" src="/js/jquery.featureList-1.0.0.js"></script>
     <script type="text/javascript" src="/js/script.js"></script>
-    <script type="text/javascript" src="/js/jivosite.js"></script>
-    
 </head>
 <body>
 <div class="wrapper">
@@ -194,7 +192,7 @@
 			{if $leftlinks && $enableleftlinks}
 			<div class="side-box">
 				<ul class="boxes-links">
-					<li><a href="ittsearch" class="search_ittour"><span>Поиск тура</span></a></li>
+					<li><a href="search" class="search_ittour"><span>Поиск тура</span></a></li>
 					{foreach from=$leftlinks name=link item=item}
 					<li><a href="{$item.varLink}" class="{$item.varAliasClass}"><span>{$item.varName}</span></a></li>
 					{/foreach}
@@ -215,6 +213,10 @@
 			<div class="side-box">
 				<a href="http://{$bannersZone.varLink1}" class="advert"><img src="{$FILES_URL}{$bannersZone.varBanner1Name}" width="{$bannersZone.intWidth1}" height="{$bannersZone.intHeight1}" alt="" /></a>
 			</div>
+			{if $REQUEST_URI!=='/countries/'|cat:$curCountry.varUrlAlias}
+			<div id="showcase_module"></div>
+			<script src="https://www.ittour.com.ua/showcase_search.jsx?id=571570D594681G0595N6672&type=42&kind=50&width_class=55&num=1&row_count=4"></script> 
+			{/if}
 			<div class="side-box">
 				<h3 class="title">Новости</h3>
 				<dl class="news">
@@ -238,7 +240,6 @@
 			</ul>
 			<div class="copyright">
 				<p>© 2006-2017 Panda Travel. Все права защищены.</p>
-				<p class="develop">Разработка и поддержка - <a href="http://miritec.com">Миритек</a></p>
 			</div>
 			{if $static_zone.social_zone}
 				{include file="static_zone.tpl" zone=$static_zone.social_zone static_zone_path=$static_zone_path template=footer}
@@ -254,5 +255,6 @@
 		{include file="static_zone.tpl" zone=$static_zone.footerSeo static_zone_path=$static_zone_path template=footer}
 	{/if}
 </div><!--end wrapper-->
+<script type="text/javascript" src="/js/jivosite.js"></script>
 </body>
 </html>
