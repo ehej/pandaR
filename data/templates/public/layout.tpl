@@ -213,10 +213,10 @@
 			<div class="side-box">
 				<a href="http://{$bannersZone.varLink1}" class="advert"><img src="{$FILES_URL}{$bannersZone.varBanner1Name}" width="{$bannersZone.intWidth1}" height="{$bannersZone.intHeight1}" alt="" /></a>
 			</div>
-			{if $REQUEST_URI!=='/countries/'|cat:$curCountry.varUrlAlias}
+			{*if $REQUEST_URI!=='/countries/'|cat:$curCountry.varUrlAlias}
 			<div id="showcase_module"></div>
 			<script src="https://www.ittour.com.ua/showcase_search.jsx?id=571570D594681G0595N6672&type=42&kind=50&width_class=55&num=1&row_count=4"></script> 
-			{/if}
+			{/if*}
 			<div class="side-box">
 				<h3 class="title">Новости</h3>
 				<dl class="news">
