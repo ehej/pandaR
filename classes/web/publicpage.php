@@ -1266,12 +1266,12 @@ class PublicPage extends Page {
 					}
 					$hotel = $this->hotelsTable->Get(array('intHotelID' => $intHotelID));
 					$this->document->addValue('isShowComments', $hotel['varShowComments']);
-					$gallIDs = $this->galleriesToModulesTable->GetList(array(/*'varModuleName' => 'hotels',*/ 'intModuleID' => $intHotelID), null, false);
+					$gallIDs = $this->galleriesToModulesTable->GetList(array('varModuleName' => 'hotels', 'intModuleID' => $intHotelID), null, false);
 					$dat['varModule'] = 'hotel_gallery';
 					$dat['varIdentifier'] = $intHotelID;
 					$gallery_link = LinkCreator::create($dat,$this->all_alias);
 					$this->document->addValue('gallery_link', $gallery_link);
-					$limit = 4;
+					$limit = 28;
 					$thisHotel = true;
 					$bannersToModules = $this->bannersToModulesTable->GetList(array('varModuleName' => 'hotels', 'intModuleID' => $intHotelID));
 					$comments = $this->commentsTable->GetByFields(array('varModuleName' => 'hotels', 'intModuleID' => $intHotelID, 'isActive' => 1), array('varDate' => 'DESC'), false);	

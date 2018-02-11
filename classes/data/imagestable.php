@@ -23,7 +23,7 @@ class ImagesTable extends AbstractTable {
 	
 	function getImagesForCurModule($gallIDs, $file = '') {
 		if($file == 'hotel'){
-			$limit = ' LIMIT 5 ';
+			$limit = ' LIMIT 28 ';
 		}else{
 			$limit = '';
 		}
