@@ -51,7 +51,7 @@
 		{/if}
 		</table>
 		<br />
-		{include file="layout/gallery.tpl"}
+                <center>{include file="layout/gallery.tpl"}</center>
 		{if $data.hotel}
 			<div class="tour_top_description">{$data.hotel.varDescription}</div><br/>
 		{else}

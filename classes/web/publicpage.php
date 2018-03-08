@@ -1310,6 +1310,28 @@ class PublicPage extends Page {
 					$bannersToModules = $this->bannersToModulesTable->GetList(array('varModuleName' => 'excursions', 'intModuleID' => $intExcursionID));
 				break;
 			}
+            
+            case 'tours': {
+                $intTourID = $this->intTourID;
+                if (empty($intTourID)) { 
+                    break;
+                }
+//              if(empty($intTourID)) {
+//                  $intTourlID = LinkCreator::url_to_id('tours',$varUrlAlias,$this->all_alias);
+//              }
+                $tour = $this->toursTable->Get(array('intTourID' => $intTourID));
+                $this->document->addValue('isShowComments', $tour['varShowComments']);
+                $gallIDs = $this->galleriesToModulesTable->GetList(array(
+                    'varModuleName' => 'tours',
+                    'intModuleID' => $intTourID
+                ), null, false);
+                $dat['varModule'] = 'tour_gallery';
+                $dat['varIdentifier'] = $intTourID;
+                $gallery_link = LinkCreator::create($dat, $this->all_alias);
+                $this->document->addValue('gallery_link', $gallery_link);
+                $limit = 28;
+                break;
+            }
 			
 			default	: {
 					$modPageData = $this->modulesPagesTable->GetByFields(array('varPage' => $fileName));

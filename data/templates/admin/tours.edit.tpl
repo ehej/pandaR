@@ -28,6 +28,25 @@
 		<td>Название<span class="important">*</span></td>
 		<td><input type="text" id="varName" name="varName" value="{$data.varName}" size="122" /></td>
 	</tr>
+        <tr>
+            <td>Фотогалерея</td>
+            <td>
+                Фильтр галереи: <input type="text" id="find" onkeyup="finds(this.value, 'intGalleryID');">
+                <select name="intGalleryID[]" id="intGalleryID" multiple="multiple" style="width: 100%;">
+                    {foreach from=$galeries_list item=item}
+                        <option value="{$item.intGalleryID}"
+                                {foreach from=$galleries_to_modules item=it}
+                                    {if $item.intGalleryID==$it.intGalleryID} 
+                                        selected="selected"
+                                    {/if}
+                                {/foreach}>
+                            {$item.varTitle}
+                        </option>
+                    {/foreach}
+                </select>
+
+            </td>
+        </tr>
 	<tr>
 		<td width="140">Тип</td>
 		<td>

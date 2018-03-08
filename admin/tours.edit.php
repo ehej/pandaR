@@ -11,10 +11,20 @@ Kernel::Import("classes.data.HotelsTable");
 Kernel::Import("classes.data.CurrenciesTable");
 Kernel::Import("classes.data.PlaceTypesTable");
 Kernel::Import("classes.data.FoodTypesTable");
+Kernel::Import("classes.data.GallerysTable");
+Kernel::Import("classes.data.GalleriesToModulesTable");
 
 class IndexPage extends AdminPage {
 
 	var $toursTable, $typesTable, $countriesTable, $regionsTable;
+    /**
+	 * @var GallerysTable
+	 */
+	var $gallerysTable;
+	/**
+	 * @var GalleriesToModulesTable
+	 */
+	var $galleriesToModulesTable;
 	var $data = false;
 
 	function index() {
@@ -38,6 +48,8 @@ class IndexPage extends AdminPage {
 		$this->ToursCountPeoplesTable = new ToursCountPeoplesTable($this->connection);
 		$this->FoodTypesTable = new FoodTypesTable($this->connection);
 		$this->PlaceTypesTable = new PlaceTypesTable($this->connection);
+        $this->gallerysTable = new GallerysTable($this->connection);
+		$this->galleriesToModulesTable = new GalleriesToModulesTable($this->connection);
 		
 		$intTourID = $this->request->getNumber('intTourID', 0);
 		if ($intTourID) {
@@ -223,6 +235,20 @@ class IndexPage extends AdminPage {
 				);
 				$this->ToursPlacementTable->insert($item,true);
 			}
+
+            // edit gallery (delete old and add new)
+            $intGalleryIDList = $this->request->Value('intGalleryID');
+            $intTourID = $data['intTourID'];
+			$arrTmp = array('varModuleName' => 'tours', 'intModuleID' => $intTourID);
+			$this->galleriesToModulesTable->DeleteByFields($arrTmp);
+			foreach($intGalleryIDList as $value) {
+				$d = array();
+				$d['varModuleName'] = 'tours';
+				$d['intModuleID'] = $data['intTourID'];
+				$d['intGalleryID'] = $value;
+				$this->galleriesToModulesTable->Insert($d);
+			}
+
 			$this->addMessage('Данные успешно сохранены');
 			if (isset($data['intTourID']) && !empty($data['intTourID'])) $this->response->redirect('tours.edit.php?intTourID='.$data['intTourID']);
 		}
@@ -283,6 +309,14 @@ class IndexPage extends AdminPage {
 		
 		$this->document->addValue('countries_list', $this->countriesTable->getList(null, array('varName'=>'asc')));
 		$this->document->addValue('regions_list', $this->regionsTable->getList(null, array('varName'=>'asc'), null, 'GetListWithCountryName', 'getSQLRows'));
+
+        // get gallery
+        $this->document->addValue('galeries_list', $this->gallerysTable->GetList(null, array('varTitle'=>'ASC')));
+        $this->document->addValue('galleries_to_modules', $this->galleriesToModulesTable->GetList(array(
+            'varModule' => 'tours',
+            'intModuleID' => $this->data['intTourID']
+        )));
+
 		if (!empty($this->data['varFile']))	$this->document->addValue('file', FILES_URL.$this->data['varFile']);
 	}
 
